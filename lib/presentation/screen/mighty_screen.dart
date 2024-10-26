@@ -24,6 +24,48 @@ class MightyScreen extends StatelessWidget {
         backgroundColor: ColorStyles.primary100,
         centerTitle: true,
         title: const Text('Mighty Counter'),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text("Confirmation"),
+                    content: const Text("Are you sure you want to reset?"),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text("Cancel"),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          viewModel.clearData();
+                        },
+                        child: const Text("OK"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Container(
+              height: 35,
+              width: 60,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Text('Reset'),
+            ),
+          ),
+          const SizedBox(width: 10),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +109,6 @@ class MightyScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              viewModel.saveHistory();
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -84,7 +125,7 @@ class MightyScreen extends StatelessWidget {
               color: ColorStyles.primary100,
               child: const Center(
                 child: Text(
-                  'All History',
+                  'View All History',
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),

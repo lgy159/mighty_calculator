@@ -24,6 +24,12 @@ class MightyViewModel extends ChangeNotifier {
 
   bool isPatternSelected(int index) => selectedPatternIndex == index;
 
+  void clearData() {
+    _initPlayer();
+    histories = [];
+    notifyListeners();
+  }
+
   void _initPlayer() {
     players = List.generate(5, (index) => Player(name: String.fromCharCode(65 + index), score: 0));
   }
