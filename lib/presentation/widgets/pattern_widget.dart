@@ -27,8 +27,6 @@ class PatternWidget extends StatelessWidget {
         ),
         padding: const EdgeInsets.all(5),
         alignment: Alignment.center,
-        height: 60,
-        width: 60,
         child: Text(pattern, style: const TextStyle(fontSize: 40)),
       ),
     );

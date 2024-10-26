@@ -23,7 +23,7 @@ class MightyScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorStyles.primary100,
         centerTitle: true,
-        title: const Text('Mighty Counter'),
+        title: const Text('Mighty Counter', style: TextStyle(color: Colors.white)),
         actions: [
           GestureDetector(
             onTap: () {

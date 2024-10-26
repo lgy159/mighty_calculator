@@ -18,7 +18,7 @@ class PlayerWidget extends StatelessWidget {
         ),
       ),
       alignment: Alignment.center,
-      height: 48,
+      height: 56,
       child: Center(
         child: Text(text),
       ),

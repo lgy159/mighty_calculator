@@ -43,6 +43,7 @@ dependencies:
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   google_mobile_ads: ^5.2.0
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -99,3 +100,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_native_splash:
+  android: true
+  color: "#FFFFFF"
+  web: true
+  android_12:
+    color: "#FFFFFF"
+    image: "assets/mighty_count_app_icon.png"
+
